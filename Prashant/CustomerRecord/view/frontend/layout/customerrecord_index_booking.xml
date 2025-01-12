@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">    
+    <body>
+        <referenceBlock name="navigation.sections" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Prashant\CustomerRecord\Block\Index\Booking" name="customerrecord.booking" template="Prashant_CustomerRecord::booking.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

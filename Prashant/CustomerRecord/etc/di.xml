@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Prashant\CustomerRecord\Api\RecordRepositoryInterface" type="Prashant\CustomerRecord\Model\RecordRepository"/>
+	<preference for="Prashant\CustomerRecord\Api\Data\RecordInterface" type="Prashant\CustomerRecord\Model\Record"/>
+	<preference for="Prashant\CustomerRecord\Api\Data\RecordSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Prashant\CustomerRecord\Model\ResourceModel\Record\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">prashant_customerrecord_record</argument>
+			<argument name="resourceModel" xsi:type="string">Prashant\CustomerRecord\Model\ResourceModel\Record\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="prashant_customerrecord_record_listing_data_source" xsi:type="string">Prashant\CustomerRecord\Model\ResourceModel\Record\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

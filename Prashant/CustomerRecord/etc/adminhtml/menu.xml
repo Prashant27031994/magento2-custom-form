@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Prashant::top_level" title="Prashant" module="Prashant_CustomerRecord" sortOrder="99" resource="Magento_Backend::content"/>
+		<add id="Prashant_CustomerRecord::prashant_customerrecord_record" title="Customer Record" module="Prashant_CustomerRecord" sortOrder="99" resource="Magento_Backend::content" parent="Prashant::top_level" action="prashant_customerrecord/record/index"/>
+	</menu>
+</config>

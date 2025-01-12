@@ -1,0 +1,10 @@
+type Record {
+    record_id: Int
+    name: String
+    email: String
+    country: String
+}
+
+type Query {
+    getRecordByEmail(email: String!): [Record] @resolver(class: "Prashant\\CustomerRecord\\Model\\Resolver\\RecordByEmail")
+}

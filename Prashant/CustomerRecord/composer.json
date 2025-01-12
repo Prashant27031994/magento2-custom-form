@@ -1,0 +1,22 @@
+{
+    "name": "prashant/module-customerrecord",
+    "description": "custom form, Grid, Rest Api & graphql Api",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Prashant",
+            "email": "prashantbanshiwal@gamil.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Prashant\\CustomerRecord\\": ""
+        }
+    }
+}

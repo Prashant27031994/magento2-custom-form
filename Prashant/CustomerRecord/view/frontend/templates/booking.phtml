@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 70px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Page</h1>
+        <form action="<?php echo htmlspecialchars($block->getFormAction()); ?>" method="post">
+            <input type="hidden" name="form_key" value="<?= $block->getFormKey() ?>" />
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+
+            <label for="country">Country</label>
+            <select name="country" id="country" required>
+                <option value="">-- Select Country --</option>
+                <?php foreach ($block->getCountryCollection() as $country): ?>
+                    <option value="<?= $country->getCountryId(); ?>">
+                        <?= $country->getName(); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select><br><br>
+            <input type="submit" value="Send Booking Information">
+        </form>
+    </div>
+</body>
+</html>
